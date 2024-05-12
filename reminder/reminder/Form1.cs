@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -13,8 +14,11 @@ namespace reminder
 {
     public partial class Form1 : Form
     {
+
+        private DataBase db;
         private DateTime reminderDateTime;
         private Timer reminderTimer;
+
         public Form1()
         {
             InitializeComponent();
@@ -22,7 +26,9 @@ namespace reminder
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.Format = DateTimePickerFormat.Time;
             dateTimePicker2.ShowUpDown = true;
-
+            // обработка событий в comboBox1
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            
             //проверка времени каждую секунду
             reminderTimer = new Timer();
             reminderTimer.Tick += reminderTimer_Tick;
@@ -40,9 +46,9 @@ namespace reminder
             string time = dateTimePicker2.Value.ToString("hh:mm:ss tt", CultureInfo.CurrentUICulture);
             string message = textBox3.Text;
             string logEntry = $"Дата: {date}  Время:{time}\r\n Напоминание: {message}\r\n";
-            richTextBox1.Text += logEntry;
 
-            reminderDateTime = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day, 
+
+            reminderDateTime = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day,
                 dateTimePicker2.Value.Hour, dateTimePicker2.Value.Minute, dateTimePicker2.Value.Second);
 
             reminderTimer.Start();
@@ -66,15 +72,19 @@ namespace reminder
             reminderTimer.Stop();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            richTextBox1.Clear();
-            reminderTimer.Stop();
-        }
+
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+        
     }
 }

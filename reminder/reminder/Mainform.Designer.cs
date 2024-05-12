@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainform));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSlideNotif = new System.Windows.Forms.Panel();
             this.Calen = new System.Windows.Forms.Button();
             this.AllNotif = new System.Windows.Forms.Button();
@@ -38,17 +39,16 @@
             this.panelSlideAdmin = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.ControlAdminDB = new System.Windows.Forms.Button();
             this.btnControl = new System.Windows.Forms.Button();
             this.BtnNotif = new System.Windows.Forms.Button();
             this.P = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSlideNotif.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelSlideAdmin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -59,6 +59,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(328, 100);
             this.panel2.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(20)))));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(328, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panelSlideNotif
             // 
@@ -130,7 +144,7 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(328, 502);
+            this.panelMain.Size = new System.Drawing.Size(328, 577);
             this.panelMain.TabIndex = 0;
             // 
             // panelSlideAdmin
@@ -138,7 +152,7 @@
             this.panelSlideAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(22)))), ((int)(((byte)(51)))));
             this.panelSlideAdmin.Controls.Add(this.button5);
             this.panelSlideAdmin.Controls.Add(this.button4);
-            this.panelSlideAdmin.Controls.Add(this.button3);
+            this.panelSlideAdmin.Controls.Add(this.ControlAdminDB);
             this.panelSlideAdmin.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSlideAdmin.Location = new System.Drawing.Point(0, 314);
             this.panelSlideAdmin.Name = "panelSlideAdmin";
@@ -175,20 +189,21 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // ControlAdminDB
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(328, 42);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Отделы";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
+            this.ControlAdminDB.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ControlAdminDB.FlatAppearance.BorderSize = 0;
+            this.ControlAdminDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ControlAdminDB.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ControlAdminDB.Location = new System.Drawing.Point(0, 0);
+            this.ControlAdminDB.Name = "ControlAdminDB";
+            this.ControlAdminDB.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.ControlAdminDB.Size = new System.Drawing.Size(328, 42);
+            this.ControlAdminDB.TabIndex = 1;
+            this.ControlAdminDB.Text = "Отделы";
+            this.ControlAdminDB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ControlAdminDB.UseVisualStyleBackColor = true;
+            this.ControlAdminDB.Click += new System.EventHandler(this.ControlAdminDB_Click);
             // 
             // btnControl
             // 
@@ -226,9 +241,9 @@
             // 
             this.P.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(7)))), ((int)(((byte)(35)))));
             this.P.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.P.Location = new System.Drawing.Point(328, 402);
+            this.P.Location = new System.Drawing.Point(328, 477);
             this.P.Name = "P";
-            this.P.Size = new System.Drawing.Size(740, 100);
+            this.P.Size = new System.Drawing.Size(560, 100);
             this.P.TabIndex = 1;
             // 
             // panelChildForm
@@ -237,28 +252,15 @@
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(328, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(740, 402);
+            this.panelChildForm.Size = new System.Drawing.Size(560, 477);
             this.panelChildForm.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(2)))), ((int)(((byte)(20)))));
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(328, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
             // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 502);
+            this.ClientSize = new System.Drawing.Size(888, 577);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.P);
             this.Controls.Add(this.panelMain);
@@ -266,10 +268,10 @@
             this.Text = "Mainform";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSlideNotif.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelSlideAdmin.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -285,7 +287,7 @@
         private System.Windows.Forms.Panel panelSlideAdmin;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button ControlAdminDB;
         private System.Windows.Forms.Button btnControl;
         private System.Windows.Forms.Button BtnNotif;
         private System.Windows.Forms.Panel P;

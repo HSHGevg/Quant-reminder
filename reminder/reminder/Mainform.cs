@@ -77,5 +77,16 @@ namespace reminder
         {
             Process.Start(new ProcessStartInfo("https://kvantprv.dm-centre.ru/") { UseShellExecute = true });
         }
+
+        private void panelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        //открытие админской панели
+        private void ControlAdminDB_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Control());
+
+        }
     }
 }
