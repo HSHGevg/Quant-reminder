@@ -78,4 +78,5 @@ C:\Users\PABLO\Source\Repos\Quant-reminder\reminder\reminder\obj\Debug\reminder.
 C:\Users\PABLO\Source\Repos\Quant-reminder\reminder\reminder\obj\Debug\reminder.csproj.CopyComplete
 C:\Users\PABLO\Source\Repos\Quant-reminder\reminder\reminder\obj\Debug\reminder.exe
 C:\Users\PABLO\Source\Repos\Quant-reminder\reminder\reminder\obj\Debug\reminder.pdb
-C:\Users\PABLO\source\repos\Quant-reminder\reminder\reminder\obj\Debug\reminder.Control.resources
+C:\Users\PABLO\source\repos\Quant-reminder\reminder\reminder\obj\Debug\reminder.AddUser.resources
+C:\Users\PABLO\source\repos\Quant-reminder\reminder\reminder\obj\Debug\reminder.ControlForm.resources

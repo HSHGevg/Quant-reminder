@@ -92,11 +92,11 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control.cs">
+    <Compile Include="ControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Control.Designer.cs">
-      <DependentUpon>Control.cs</DependentUpon>
+    <Compile Include="ControlForm.Designer.cs">
+      <DependentUpon>ControlForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="Form1.cs">
@@ -122,8 +122,8 @@
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control.resx">
-      <DependentUpon>Control.cs</DependentUpon>
+    <EmbeddedResource Include="ControlForm.resx">
+      <DependentUpon>ControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

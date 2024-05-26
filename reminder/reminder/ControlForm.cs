@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace reminder
 {
-    public partial class Control : Form
+    public partial class ControlForm : Form
     {
         private DataBase db=new DataBase();
-        public Control()
+        public ControlForm()
         {
             InitializeComponent();
             LoadTablesIntoComboBox();
@@ -22,7 +22,7 @@ namespace reminder
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedTable=comboBox1.SelectedItem.ToString();
+            string selectedTable=SelectTable.SelectedItem.ToString();
             string queryTable="SELECT * FROM " + selectedTable;
             try
             {
@@ -55,15 +55,20 @@ namespace reminder
                     {
                         foreach(DataRow row in table.Rows)
                         {
-                            comboBox1.Items.Add(row["TABLE_NAME"].ToString());
+                            SelectTable.Items.Add(row["TABLE_NAME"].ToString());
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                    MessageBox.Show("Ощибка загрузки таблиц:" + ex.Message);
+                    MessageBox.Show("Ошибка загрузки таблиц:" + ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new AddUser(this).Show();
         }
     }
 }

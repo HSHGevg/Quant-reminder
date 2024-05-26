@@ -85,7 +85,7 @@ namespace reminder
         //открытие админской панели
         private void ControlAdminDB_Click(object sender, EventArgs e)
         {
-            openChildForm(new Control());
+            openChildForm(new ControlForm());
 
         }
     }
