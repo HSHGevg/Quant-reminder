@@ -12,11 +12,19 @@ namespace reminder
 {
     public class DataBase
     {
-       public string StringCon()
+        private SqlConnection connection;
+
+        public DataBase()
         {
-            return @"Data Source=PABLOVIRT\SQLEXPRESS;Initial Catalog=DB_kvantorium;Integrated Security=True";
+            
+           connection = new SqlConnection(StringCon());
+        }
+        public string StringCon()
+        {
+            return @"Data Source=PABLOVIRT\SQLEXPRESS;Initial Catalog=BDforPO;Integrated Security=True";
 
         }
+      
        public SqlDataAdapter queryExecute(string query)
        
         {
@@ -89,8 +97,17 @@ namespace reminder
             }
             return columnNames;
         }
-    }
+        public SqlConnection GetConnection()
+        {
+            if (connection.State == ConnectionState.Closed)
+            {
+                connection.Open();
+            }
+            return connection;
+        }
 
+    }
+   
 }
 
 

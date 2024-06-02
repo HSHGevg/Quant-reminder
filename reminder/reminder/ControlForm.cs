@@ -12,17 +12,22 @@ using System.Windows.Forms;
 namespace reminder
 {
     public partial class ControlForm : Form
+
     {
+
         private DataBase db=new DataBase();
+        
         public ControlForm()
+
         {
+            
             InitializeComponent();
             LoadTablesIntoComboBox();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedTable=SelectTable.SelectedItem.ToString();
+            string selectedTable = SelectTable.SelectedItem.ToString();
             string queryTable="SELECT * FROM " + selectedTable;
             try
             {
@@ -70,5 +75,12 @@ namespace reminder
         {
             new AddUser(this).Show();
         }
+       
+        
+            
+            
+                
+           
+        
     }
 }

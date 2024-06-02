@@ -37,7 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SelectReminder = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,9 +69,9 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(136, 245);
+            this.textBox3.Location = new System.Drawing.Point(136, 195);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(174, 20);
+            this.textBox3.Size = new System.Drawing.Size(178, 20);
             this.textBox3.TabIndex = 27;
             // 
             // label3
@@ -79,7 +79,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(12, 240);
+            this.label3.Location = new System.Drawing.Point(12, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 24);
             this.label3.TabIndex = 26;
@@ -109,7 +109,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(393, 297);
+            this.button1.Location = new System.Drawing.Point(66, 281);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(193, 49);
             this.button1.TabIndex = 22;
@@ -130,14 +130,14 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // comboBox1
+            // SelectReminder
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(104, 143);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 21);
-            this.comboBox1.TabIndex = 33;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.SelectReminder.FormattingEnabled = true;
+            this.SelectReminder.Location = new System.Drawing.Point(136, 141);
+            this.SelectReminder.Name = "SelectReminder";
+            this.SelectReminder.Size = new System.Drawing.Size(178, 21);
+            this.SelectReminder.TabIndex = 33;
+            this.SelectReminder.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -153,9 +153,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(369, 114);
+            this.dataGridView1.Location = new System.Drawing.Point(343, 138);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(399, 253);
             this.dataGridView1.TabIndex = 35;
             // 
             // Form1
@@ -163,10 +163,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(1)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(648, 408);
+            this.ClientSize = new System.Drawing.Size(794, 473);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.SelectReminder);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dateTimePicker2);
@@ -198,7 +198,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox SelectReminder;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView1;
     }

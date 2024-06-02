@@ -28,11 +28,17 @@ namespace reminder
 
         Dictionary<string, string> tableIdColumnNames = new Dictionary<string, string>
         {
-            {"admins_department", "admin_id"         },
-            {"methodists_department", "methodist_id" },
-            {"bosses_department", "boss_id"          },
-            {"project_department", "project_id"      },
-            {"all_reminds","id"                      }
+            {"hall_reminder", "reminder_id"},
+            {"hall_admins", "hall_id"},
+            {"methodists_reminder", "reminder_id"},
+            {"methodists", "methodist_id"},
+            {"bosses_reminder", "reminder_id"},
+            {"bosses", "boss_id"},
+            {"project_department", "project_id"},
+            {"project_reminder", "reminder_id"},
+            {"sys_admins", "sys_id"},
+            {"admins_reminder", "reminder_id"}
+
         };
         private void AddMainUs_Click(object sender, EventArgs e)
         {
@@ -81,12 +87,20 @@ namespace reminder
                             return "Null"; // Значение по умолчанию для неизвестных столбцов
                     }
                 }));
-                var queryInsert = $"INSERT INTO {selectedTable} ({columns}) values ({values})";
+                   var queryInsert = $"INSERT INTO {selectedTable} ({columns}) values ({values})";
                
-               if(db.QueryExecute(queryInsert))
-                {
+                   if(db.QueryExecute(queryInsert))
+
+                    {
+                    //обновление данных в таблице dataGridView
+                    string selectQuery = $"SELECT * FROM {selectedTable}";
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(selectQuery, db.GetConnection());
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+                    controlForm.dataGridView1.DataSource = dataTable;
                     MessageBox.Show("Данные успешно добавлены.", "Успех");
-                }
+                    
+                   }
                 else
                 {
                     MessageBox.Show("Не удалось добавить данные.", "Ошибка");

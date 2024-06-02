@@ -15,26 +15,29 @@ namespace reminder
     public partial class Form1 : Form
     {
 
-        private DataBase db;
+        private DataBase db = new DataBase();
         private DateTime reminderDateTime;
         private Timer reminderTimer;
 
         public Form1()
+
         {
+           
             InitializeComponent();
+            LoadSpecifTables();
             dateTimePicker1.CustomFormat = "dd MMMM yyyy";
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.Format = DateTimePickerFormat.Time;
             dateTimePicker2.ShowUpDown = true;
             // обработка событий в comboBox1
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            SelectReminder.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             
             //проверка времени каждую секунду
             reminderTimer = new Timer();
             reminderTimer.Tick += reminderTimer_Tick;
             reminderTimer.Interval = 1000;
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -82,9 +85,54 @@ namespace reminder
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            string selectedTable = SelectReminder.SelectedItem.ToString(); 
+            string queryTable = "SELECT * FROM " + selectedTable;
+            try
+            {
+                SqlDataAdapter adapter = db.queryExecute(queryTable);
+                if (adapter != null)
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView1.DataSource = table;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка загрузки данных из таблицы:" + ex.Message);
+            }
+
 
         }
-        
+        //Загрузка списка таблиц в comboBox
+        private void LoadSpecifTables()
+        {
+            var querySpecifTable = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' AND " +
+                "TABLE_NAME IN ('combined_reminder', 'admins', 'hall_admins', 'methodists', 'bosses', 'project' );";
+            try
+            {
+                SqlDataAdapter adapter = db.queryExecute(querySpecifTable);
+                if (adapter != null)
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    if (table.Rows.Count > 0)
+                    {
+                        foreach (DataRow row in table.Rows)
+                        {
+                            SelectReminder.Items.Add(row["TABLE_NAME"].ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка загрузки таблиц напоминалок:" + ex.Message);
+            }
+
+
+        }
+
     }
 }
