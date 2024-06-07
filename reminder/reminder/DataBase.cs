@@ -106,6 +106,17 @@ namespace reminder
             return connection;
         }
 
+        public void QueryExecuteWithParams(string query, Dictionary<string, object> parameters)
+        {
+            SqlCommand command = new SqlCommand(query, connection);
+            foreach (var param in parameters)
+            {
+                command.Parameters.AddWithValue(param.Key, param.Value);
+            }
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
     }
    
 }
